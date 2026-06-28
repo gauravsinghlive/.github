@@ -1,4 +1,4 @@
-## Hi there <img src="https://emoji.slack-edge.com/T0172CCPGUW/party-blob/d7253707fa13e9ee.gif" width="30"/>
+## Hi there 
 
 <!--
 **gauravsingh7x/gauravsingh7x** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -68,4 +68,9 @@ Here are some ideas to get you started:
 [![DEV.to](https://img.shields.io/badge/Read%20on%20DEV.to-05122A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/gauravSingh7x)&nbsp;
 
 
+
+<h2 align="center">The Snake ate my work as a Snack. 🐍</h2>
+<p><img src="https://github.com/gauravsingh7x/gauravsingh7x/blob/output/github-snake-dark.svg" /></p>
+
+<!-- ![snake gif](https://github.com/gauravsingh7x/gauravsingh7x/blob/output/github-contribution-grid-snake.gif) -->
 
