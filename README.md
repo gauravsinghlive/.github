@@ -1,4 +1,4 @@
-## Hi there 👋
+## Hi there <img src="https://emoji.slack-edge.com/T0172CCPGUW/party-blob/d7253707fa13e9ee.gif" width="30"/>
 
 <!--
 **gauravsingh7x/gauravsingh7x** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -17,8 +17,25 @@ Here are some ideas to get you started:
 
 
 
+#### 🤝 Connect With Me
 
-### 🚀 Tech Stack
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/gauravsingh7x)
+[![Email](https://img.shields.io/badge/Email%20%20-05122A?style=for-the-badge&logo=microsoftoutlook&logoColor=0078D4)](mailto:gauravsingh7x@outlook.in)
+[![Resume](https://img.shields.io/badge/Resume-05122A?style=for-the-badge&logo=googledrive&logoColor=34A853)](YOUR_DRIVE_RESUME_LINK)
+[![Portfolio](https://img.shields.io/badge/Portfolio-05122A?style=for-the-badge&logo=aboutdotme&logoColor=FFFFFF)](YOUR_PORTFOLIO_LINK)
+
+
+<h5 style="display:inline; ">🌐 Social Links</h5>
+<h5>
+  <a href="https://x.com/gauravsingh7x"><img height="20" src="https://cdn.simpleicons.org/x/FFFFFF" /></a>&nbsp;&nbsp;
+  <a href="https://instagram.com/gauravsingh7x"><img height="24" src="https://cdn.simpleicons.org/instagram/E4405F" /></a>&nbsp;&nbsp;
+  <a href="https://facebook.com/gauravsingh7x"><img height="24" src="https://cdn.simpleicons.org/facebook/1877F2" /></a>&nbsp;&nbsp;
+  <a href="https://threads.net/@gauravsingh7x"><img height="24" src="https://cdn.simpleicons.org/threads/FFFFFF" /></a>&nbsp;&nbsp;
+  <a href="https://t.me/gauravsingh7x"><img height="24" src="https://cdn.simpleicons.org/telegram/26A5E4" /></a>
+</h5>
+
+
+### 🚀 Tech Stack  <img src="https://media.giphy.com/media/o7mLSkGYCu9Pi/giphy.gif" width="25"/>
 
 <p>
   <img height="36" src="https://img.shields.io/badge/-Node.js-05122A?style=flat&logo=node.js" />
@@ -51,25 +68,4 @@ Here are some ideas to get you started:
 [![DEV.to](https://img.shields.io/badge/Read%20on%20DEV.to-05122A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/gauravSingh7x)&nbsp;
 
 
-### 🤝 Connect With Me
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-05122A?style=for-the-badge&logo=linkedin&logoColor=0A66C2)](https://linkedin.com/in/gauravsingh7x)
-[![Email](https://img.shields.io/badge/Email-05122A?style=for-the-badge&logo=microsoftoutlook&logoColor=0078D4)](mailto:gauravsingh7x@outlook.in)
-[![Resume](https://img.shields.io/badge/Resume-05122A?style=for-the-badge&logo=googledrive&logoColor=34A853)](RESUME_LINK)
-[![Portfolio](https://img.shields.io/badge/Portfolio-05122A?style=for-the-badge&logo=vercel&logoColor=FFFFFF)](PORTFOLIO_LINK)
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-05122A?style=for-the-badge&logo=googlechrome&logoColor=4285F4)](YOUR_PORTFOLIO_LINK)
-[![Portfolio](https://img.shields.io/badge/Portfolio-05122A?style=for-the-badge&logo=googlechrome&logoColor=4285F4)](YOUR_PORTFOLIO_LINK)
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/gauravsingh7x)
-[![Email](https://img.shields.io/badge/Email%20%20-05122A?style=for-the-badge&logo=microsoftoutlook&logoColor=0078D4)](mailto:gauravsingh7x@outlook.in)
-[![Resume](https://img.shields.io/badge/Resume-05122A?style=for-the-badge&logo=googledrive&logoColor=34A853)](YOUR_DRIVE_RESUME_LINK)
-[![Portfolio](https://img.shields.io/badge/Portfolio-05122A?style=for-the-badge&logo=aboutdotme&logoColor=FFFFFF)](YOUR_PORTFOLIO_LINK)
-
-### 🌐 Social Links
-
-[![X](https://img.shields.io/badge/-X-05122A?style=flat&logo=x&logoColor=FFFFFF)](https://x.com/gauravsingh7x)&nbsp;
-[![Instagram](https://img.shields.io/badge/-Instagram-05122A?style=flat&logo=instagram&logoColor=E4405F)](https://instagram.com/gauravsingh7x)&nbsp;
-[![Facebook](https://img.shields.io/badge/-Facebook-05122A?style=flat&logo=facebook&logoColor=1877F2)](https://facebook.com/gauravsingh7x)&nbsp;
-[![Threads](https://img.shields.io/badge/-Threads-05122A?style=flat&logo=threads&logoColor=FFFFFF)](https://threads.net/gauravsingh7x)&nbsp;
-[![Telegram](https://img.shields.io/badge/-Telegram-05122A?style=flat&logo=telegram&logoColor=26A5E4)](https://t.me/gauravsingh7x)&nbsp;
