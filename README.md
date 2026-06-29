@@ -38,19 +38,19 @@ Here are some ideas to get you started:
 ### 🚀 Tech Stack  <img src="https://media.giphy.com/media/o7mLSkGYCu9Pi/giphy.gif" width="25"/>
 
 <p>
-  <img height="36" src="https://img.shields.io/badge/-Node.js-05122A?style=flat&logo=node.js" />
-  <img height="36" src="https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb&logoColor=47A248" />
-  <img height="36" src="https://img.shields.io/badge/-React-05122A?style=flat&logo=react" />
-  <img height="36" src="https://img.shields.io/badge/-C%23-05122A?style=flat&logo=csharp&logoColor=512BD4" />
-  <img height="36" src="https://img.shields.io/badge/-Java%20Core-05122A?style=flat&logo=openjdk&logoColor=FFFFFF" />
-  <img height="36" src="https://img.shields.io/badge/-SQL-05122A?style=flat&logo=mysql&logoColor=4479A1" />
-  <img height="36" src="https://img.shields.io/badge/-TypeScript-05122A?style=flat&logo=typescript&logoColor=3178C6" />
-  <img height="36" src="https://img.shields.io/badge/-jQuery-05122A?style=flat&logo=jquery&logoColor=0769AD" />
-  <img height="36" src="https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript&logoColor=F7DF1E" />
-  <img height="36" src="https://img.shields.io/badge/-Tailwind%20CSS-05122A?style=flat&logo=tailwindcss&logoColor=06B6D4" />
-  <img height="36" src="https://img.shields.io/badge/-Bootstrap-05122A?style=flat&logo=bootstrap&logoColor=7952B3" />
-  <img height="36" src="https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3&logoColor=1572B6" />
   <img height="36" src="https://img.shields.io/badge/-HTML-05122A?style=flat&logo=html5&logoColor=E34F26" />
+  <img height="36" src="https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3&logoColor=1572B6" />
+  <img height="36" src="https://img.shields.io/badge/-Bootstrap-05122A?style=flat&logo=bootstrap&logoColor=7952B3" />
+  <img height="36" src="https://img.shields.io/badge/-Tailwind%20CSS-05122A?style=flat&logo=tailwindcss&logoColor=06B6D4" />
+  <img height="36" src="https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript&logoColor=F7DF1E" />
+  <img height="36" src="https://img.shields.io/badge/-jQuery-05122A?style=flat&logo=jquery&logoColor=0769AD" />
+  <img height="36" src="https://img.shields.io/badge/-TypeScript-05122A?style=flat&logo=typescript&logoColor=3178C6" />
+  <img height="36" src="https://img.shields.io/badge/-SQL-05122A?style=flat&logo=mysql&logoColor=4479A1" />
+  <img height="36" src="https://img.shields.io/badge/-Java%20Core-05122A?style=flat&logo=openjdk&logoColor=FFFFFF" />
+  <img height="36" src="https://img.shields.io/badge/-C%23-05122A?style=flat&logo=csharp&logoColor=512BD4" />
+  <img height="36" src="https://img.shields.io/badge/-React-05122A?style=flat&logo=react" />
+  <img height="36" src="https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb&logoColor=47A248" />
+  <img height="36" src="https://img.shields.io/badge/-Node.js-05122A?style=flat&logo=node.js" />
 </p>
 
 ### 🛠️ Tools
