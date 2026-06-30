@@ -15,24 +15,64 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+```json
+{
+  "welcome_msg": "Hello, World! Welcome to my digital space.",
+  "status": "Active & Open for Opportunities",
+  "name": "Gaurav Singh",
+  "role": "Full Stack Developer",
+  "location": "Lucknow, India 🇮🇳",
+  "qualification": {
+    "diploma": "Diploma in Computer Science & Engineering",
+    "btech": "Bachelor of Technology in Computer Science & Engineering"
+  },
+  "currently_learning": [
+    "Backend Architecture",
+    "System Design",
+    "DevOps"
+  ],
+  "open_to": [
+    "Full Stack Developer Roles",
+    "Freelance & Contract Projects"
+  ]
+}
+```
 
 
-#### 🤝 Connect With Me
+<table width="100%">
+  <tr>
+    <!-- Column 1: Connect With Me -->
+    <td width="53%" align="left">
+      <h3>🤝 Connect With Me</h3>
+        <p>
+          <a href="https://linkedin.com/in/gauravsingh7x"><img height="26" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+          <a href="mailto:gauravsingh7x@outlook.in"><img src="https://img.shields.io/badge/Email-05122A?style=for-the-badge&logo=microsoftoutlook&logoColor=0078D4" /></a>
+          <a href="YOUR_DRIVE_RESUME_LINK"><img src="https://img.shields.io/badge/Resume-05122A?style=for-the-badge&logo=googledrive&logoColor=34A853" /></a>
+          <a href="YOUR_PORTFOLIO_LINK"><img src="https://img.shields.io/badge/Portfolio-05122A?style=for-the-badge&logo=aboutdotme&logoColor=white" /></a>
+        </p>
+    </td>
+    <!-- Column 2: Blogs & Articles -->
+    <td width="27%" align="left">
+      <h3>✍️ Blogs/Articles</h3>
+        <p>
+          <a href="https://medium.com/@gauravSingh7x"><img src="https://img.shields.io/badge/Medium-05122A?style=for-the-badge&logo=medium&logoColor=white" /></a>
+          <a href="https://dev.to/gauravSingh7x"><img src="https://img.shields.io/badge/DEV-05122A?style=for-the-badge&logo=devdotto&logoColor=white" /></a>
+        </p>
+    </td>
+    <!-- Column 3: Social Links -->
+    <td width="18%" align="left">
+      <h3>🌐 Social &nbsp&nbsp&nbsp&nbsp&nbsp</h3>
+      <p>
+        <a href="https://x.com/gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/x/FFFFFF" /></a>&nbsp;
+        <a href="https://instagram.com/gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/instagram/E4405F" /></a>&nbsp;
+        <a href="https://facebook.com/gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/facebook/1877F2" /></a>&nbsp;
+        <a href="https://threads.net/@gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/threads/FFFFFF" /></a>
+      </p>
+    </td>
+  </tr>
+</table>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/gauravsingh7x)
-[![Email](https://img.shields.io/badge/Email%20%20-05122A?style=for-the-badge&logo=microsoftoutlook&logoColor=0078D4)](mailto:gauravsingh7x@outlook.in)
-[![Resume](https://img.shields.io/badge/Resume-05122A?style=for-the-badge&logo=googledrive&logoColor=34A853)](YOUR_DRIVE_RESUME_LINK)
-[![Portfolio](https://img.shields.io/badge/Portfolio-05122A?style=for-the-badge&logo=aboutdotme&logoColor=FFFFFF)](YOUR_PORTFOLIO_LINK)
 
-
-<h5 style="display:inline; ">🌐 Social Links</h5>
-<h5>
-  <a href="https://x.com/gauravsingh7x"><img height="20" src="https://cdn.simpleicons.org/x/FFFFFF" /></a>&nbsp;&nbsp;
-  <a href="https://instagram.com/gauravsingh7x"><img height="24" src="https://cdn.simpleicons.org/instagram/E4405F" /></a>&nbsp;&nbsp;
-  <a href="https://facebook.com/gauravsingh7x"><img height="24" src="https://cdn.simpleicons.org/facebook/1877F2" /></a>&nbsp;&nbsp;
-  <a href="https://threads.net/@gauravsingh7x"><img height="24" src="https://cdn.simpleicons.org/threads/FFFFFF" /></a>&nbsp;&nbsp;
-  <a href="https://t.me/gauravsingh7x"><img height="24" src="https://cdn.simpleicons.org/telegram/26A5E4" /></a>
-</h5>
 
 
 ### 🚀 Tech Stack  <img src="https://media.giphy.com/media/o7mLSkGYCu9Pi/giphy.gif" width="25"/>
@@ -62,12 +102,7 @@ Here are some ideas to get you started:
 ![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github&logoColor=FFFFFF)&nbsp;
 ![NPM](https://img.shields.io/badge/-NPM-05122A?style=flat&logo=npm&logoColor=CB3837)&nbsp;
 
-
-### ✍️ Blogs & Articles
-[![Medium](https://img.shields.io/badge/Read%20on%20Medium-05122A?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@gauravSingh7x)&nbsp;
-[![DEV.to](https://img.shields.io/badge/Read%20on%20DEV.to-05122A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/gauravSingh7x)&nbsp;
-
-
+<br>
 
 <h2 align="center">The Snake ate my work as a Snack. 🐍</h2>
 <p><img src="https://github.com/gauravsingh7x/gauravsingh7x/blob/output/github-snake-dark.svg" /></p>
