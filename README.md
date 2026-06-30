@@ -41,8 +41,7 @@ Here are some ideas to get you started:
 
 <table width="100%">
   <tr>
-    <!-- Column 1: Connect With Me -->
-    <td width="53%" align="left">
+    <td width="50%" align="left">
       <h3>🤝 Connect With Me</h3>
         <p>
          <a href="https://linkedin.com/in/gauravsingh7x"><img height="25" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
@@ -50,16 +49,14 @@ Here are some ideas to get you started:
          <a href="YOUR_PORTFOLIO_LINK"><img height="25" src="https://img.shields.io/badge/Portfolio-05122A?style=for-the-badge&logo=aboutdotme&logoColor=white" /></a>
         </p>
     </td>
-    <!-- Column 2: Blogs & Articles -->
-    <td width="27%" align="left">
-      <h3>✍️ Blogs/Articles</h3>
+    <td width="30%" align="left">
+      <h3>✍️ Articles/Blogs</h3>
         <p>
           <a href="https://medium.com/@gauravSingh7x"><img height="25" src="https://img.shields.io/badge/Medium-05122A?style=for-the-badge&logo=medium&logoColor=white" /></a>
           <a href="https://dev.to/gauravSingh7x"><img height="25" src="https://img.shields.io/badge/DEV-05122A?style=for-the-badge&logo=devdotto&logoColor=white" /></a>
         </p>
     </td>
-    <!-- Column 3: Social Links -->
-    <td width="18%" align="left">
+    <td width="20%" align="left">
       <h3>🌐 Social &nbsp&nbsp&nbsp&nbsp&nbsp</h3>
       <p>
         <a href="https://x.com/gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/x/FFFFFF" /></a>&nbsp;
