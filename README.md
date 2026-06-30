@@ -45,18 +45,18 @@ Here are some ideas to get you started:
     <td width="53%" align="left">
       <h3>🤝 Connect With Me</h3>
         <p>
-          <a href="https://linkedin.com/in/gauravsingh7x"><img height="26" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-          <a href="mailto:gauravsingh7x@outlook.in"><img src="https://img.shields.io/badge/Email-05122A?style=for-the-badge&logo=microsoftoutlook&logoColor=0078D4" /></a>
-          <a href="YOUR_DRIVE_RESUME_LINK"><img src="https://img.shields.io/badge/Resume-05122A?style=for-the-badge&logo=googledrive&logoColor=34A853" /></a>
-          <a href="YOUR_PORTFOLIO_LINK"><img src="https://img.shields.io/badge/Portfolio-05122A?style=for-the-badge&logo=aboutdotme&logoColor=white" /></a>
+         <a href="https://linkedin.com/in/gauravsingh7x"><img height="25" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+         <a href="mailto:gauravsingh7x@outlook.in"><img height="25" src="https://img.shields.io/badge/Email-05122A?style=for-the-badge&logo=microsoftoutlook&logoColor=0078D4" /></a>
+         <a href="YOUR_DRIVE_RESUME_LINK"><img height="25" src="https://img.shields.io/badge/Resume-05122A?style=for-the-badge&logo=googledrive&logoColor=34A853" /></a>
+         <a href="YOUR_PORTFOLIO_LINK"><img height="25" src="https://img.shields.io/badge/Portfolio-05122A?style=for-the-badge&logo=aboutdotme&logoColor=white" /></a>
         </p>
     </td>
     <!-- Column 2: Blogs & Articles -->
     <td width="27%" align="left">
       <h3>✍️ Blogs/Articles</h3>
         <p>
-          <a href="https://medium.com/@gauravSingh7x"><img src="https://img.shields.io/badge/Medium-05122A?style=for-the-badge&logo=medium&logoColor=white" /></a>
-          <a href="https://dev.to/gauravSingh7x"><img src="https://img.shields.io/badge/DEV-05122A?style=for-the-badge&logo=devdotto&logoColor=white" /></a>
+          <a href="https://medium.com/@gauravSingh7x"><img height="25" src="https://img.shields.io/badge/Medium-05122A?style=for-the-badge&logo=medium&logoColor=white" /></a>
+          <a href="https://dev.to/gauravSingh7x"><img height="25" src="https://img.shields.io/badge/DEV-05122A?style=for-the-badge&logo=devdotto&logoColor=white" /></a>
         </p>
     </td>
     <!-- Column 3: Social Links -->
