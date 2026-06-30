@@ -62,7 +62,6 @@ Here are some ideas to get you started:
         <a href="https://x.com/gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/x/FFFFFF" /></a>&nbsp;
         <a href="https://instagram.com/gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/instagram/E4405F" /></a>&nbsp;
         <a href="https://facebook.com/gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/facebook/1877F2" /></a>&nbsp;
-        <a href="https://threads.net/@gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/threads/FFFFFF" /></a>
       </p>
     </td>
   </tr>
