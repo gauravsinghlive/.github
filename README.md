@@ -84,7 +84,7 @@ Here are some ideas to get you started:
   <img height="36" src="https://img.shields.io/badge/-Java%20Core-05122A?style=flat&logo=openjdk&logoColor=FFFFFF" />
   <img height="36" src="https://img.shields.io/badge/-C%23-05122A?style=flat&logo=csharp&logoColor=512BD4" />
   <img height="36" src="https://img.shields.io/badge/-React-05122A?style=flat&logo=react" />
-  <img height="36" src="https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb&logoColor=47A248" />
+  <!-- <img height="36" src="https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb&logoColor=47A248" /> -->
   <img height="36" src="https://img.shields.io/badge/-Node.js-05122A?style=flat&logo=node.js" />
 </p>
 
