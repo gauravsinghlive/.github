@@ -32,70 +32,65 @@ Here are some ideas to get you started:
     "DevOps"
   ],
   "open_to": [
-    "Full Stack Developer Roles",
-    "Freelance & Contract Projects"
+    "Full Stack Developer",
+    "Frontend Developer",
+    "Backend Developer"
   ]
 }
 ```
 
-
-<table width="100%">
-  <tr>
-    <td width="50%" align="left">
-      <h3>🤝 Connect With Me</h3>
-        <p>
-         <a href="https://linkedin.com/in/gauravsingh7x"><img height="25" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-         <a href="mailto:gauravsingh7x@outlook.in"><img height="25" src="https://img.shields.io/badge/Email-05122A?style=for-the-badge&logo=microsoftoutlook&logoColor=0078D4" /></a>
-         <a href="YOUR_PORTFOLIO_LINK"><img height="25" src="https://img.shields.io/badge/Portfolio-05122A?style=for-the-badge&logo=aboutdotme&logoColor=white" /></a>
-        </p>
-    </td>
-    <td width="32%" align="left">
-      <h3>✍️ Articles/Blogs</h3>
-        <p>
-          <a href="https://medium.com/@gauravSingh7x"><img height="25" src="https://img.shields.io/badge/Medium-05122A?style=for-the-badge&logo=medium&logoColor=white" /></a>
-          <a href="https://dev.to/gauravSingh7x"><img height="25" src="https://img.shields.io/badge/DEV-05122A?style=for-the-badge&logo=devdotto&logoColor=white" /></a>
-        </p>
-    </td>
-    <td width="18%" align="left">
-      <h3>🌐 Social &nbsp&nbsp&nbsp&nbsp&nbsp</h3>
-      <p>
-        <a href="https://x.com/gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/x/FFFFFF" /></a>&nbsp;
-        <a href="https://instagram.com/gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/instagram/E4405F" /></a>&nbsp;
-        <a href="https://facebook.com/gauravsingh7x"><img height="18" src="https://cdn.simpleicons.org/facebook/1877F2" /></a>&nbsp;
-      </p>
-    </td>
-  </tr>
-</table>
+| 🤝 Let's Build Together | 🧠 What I'm Learning & Writing | 🌍 Find Me Around the Web | 👀 Visitors |
+|-------------------------|-------------------------------|--------------------------|-------------------|
+| [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/gauravsingh7x) [![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:gauravsingh7x@outlook.in) [![Portfolio](https://img.shields.io/badge/Portfolio-000000?logo=vercel&logoColor=white)](https://gauravsingh7x.com) | [![Medium](https://img.shields.io/badge/Medium-%23000000.svg?logo=medium&logoColor=white)](https://medium.com/@gauravsingh7x) [![Dev.to](https://img.shields.io/badge/Dev.to-0A0A0A?logo=devdotto&logoColor=white)](https://dev.to/gauravsingh7x) | [![X](https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white)](https://x.com/gauravsingh7x) [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white)](https://instagram.com/gauravsingh7x) [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=flat&logo=facebook&logoColor=white)](https://facebook.com/gauravsingh7x) [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=flat&logo=telegram&logoColor=white)](https://t.me/gauravsingh7x) | ![](https://komarev.com/ghpvc/?username=gauravsingh7x&label=Profile+Views&color=0e75b6&style=flat) |
 
 
+# 🚀 Tech Stack  <img src="https://media.giphy.com/media/o7mLSkGYCu9Pi/giphy.gif" width="25"/>
+![HTML5](https://img.shields.io/badge/HTML-%23E34F26.svg?style=flat&logo=html5&logoColor=white) 
+![CSS3](https://img.shields.io/badge/CSS-%231572B6.svg?style=flat&logo=css3&logoColor=white) 
+![Bootstrap](https://img.shields.io/badge/Bootstrap-%238511FA.svg?style=flat&logo=bootstrap&logoColor=white) 
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E) 
+![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=flat&logo=jquery&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+
+![MySQL](https://img.shields.io/badge/MySql-4479A1.svg?style=flat&logo=mysql&logoColor=white) 
+[![Java-Core](https://img.shields.io/badge/Java%20Core-ED8B00?style=flat&logo=openjdk&logoColor=white)](https://www.java.com/)
+![C#](https://img.shields.io/badge/C%23-512BD4?style=flat&logo=csharp&logoColor=white)
+![.Net](https://img.shields.io/badge/.NET%20Core-5C2D91?style=flat&logo=.net&logoColor=white) 
+[![ASP.NET-MVC](https://img.shields.io/badge/ASP.NET%20MVC-512BD4?style=flat&logo=.net&logoColor=white)](https://dotnet.microsoft.com/apps/aspnet/mvc)
+![Microsoft SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=flat&logo=microsoftsqlserver&logoColor=white)
 
 
-### 🚀 Tech Stack  <img src="https://media.giphy.com/media/o7mLSkGYCu9Pi/giphy.gif" width="25"/>
+## 🛠️ Tools
+[![Notepad++](https://img.shields.io/badge/Notepad++-90E59A?style=flat&logo=notepadplusplus&logoColor=black)](https://notepad-plus-plus.org/)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white)
+![Visual Studio](https://img.shields.io/badge/Visual_Studio-5C2D91?style=flat&logo=visual-studio&logoColor=white)
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=flat&logo=intellijidea&logoColor=white)
+![Git](https://img.shields.io/badge/Git-%23F05033.svg?style=flat&logo=git&logoColor=white) 
+![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=flat&logo=github&logoColor=white)
+![npm](https://img.shields.io/badge/npm-CB3837?style=flat&logo=npm&logoColor=white)
 
-<p>
-  <img height="36" src="https://img.shields.io/badge/-HTML-05122A?style=flat&logo=html5&logoColor=E34F26" />
-  <img height="36" src="https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3&logoColor=1572B6" />
-  <img height="36" src="https://img.shields.io/badge/-Bootstrap-05122A?style=flat&logo=bootstrap&logoColor=7952B3" />
-  <img height="36" src="https://img.shields.io/badge/-Tailwind%20CSS-05122A?style=flat&logo=tailwindcss&logoColor=06B6D4" />
-  <img height="36" src="https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript&logoColor=F7DF1E" />
-  <img height="36" src="https://img.shields.io/badge/-jQuery-05122A?style=flat&logo=jquery&logoColor=0769AD" />
-  <img height="36" src="https://img.shields.io/badge/-TypeScript-05122A?style=flat&logo=typescript&logoColor=3178C6" />
-  <img height="36" src="https://img.shields.io/badge/-SQL-05122A?style=flat&logo=mysql&logoColor=4479A1" />
-  <img height="36" src="https://img.shields.io/badge/-Java%20Core-05122A?style=flat&logo=openjdk&logoColor=FFFFFF" />
-  <img height="36" src="https://img.shields.io/badge/-C%23-05122A?style=flat&logo=csharp&logoColor=512BD4" />
-  <img height="36" src="https://img.shields.io/badge/-React-05122A?style=flat&logo=react" />
-  <!-- <img height="36" src="https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb&logoColor=47A248" /> -->
-  <img height="36" src="https://img.shields.io/badge/-Node.js-05122A?style=flat&logo=node.js" />
-</p>
 
-### 🛠️ Tools
+<!--
+![C](https://img.shields.io/badge/C-%2300599C.svg?style=flat&logo=c&logoColor=white) 
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white)](https://angular.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 
-![VS Code](https://img.shields.io/badge/-VS%20Code-05122A?style=flat&logo=visualstudiocode&logoColor=007ACC)&nbsp;
-![Visual Studio](https://img.shields.io/badge/-Visual%20Studio-05122A?style=flat&logo=visualstudio&logoColor=5C2D91)&nbsp;
-![IntelliJ IDEA](https://img.shields.io/badge/-IntelliJ%20IDEA-05122A?style=flat&logo=intellijidea&logoColor=FE315D)&nbsp;
-![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git&logoColor=F05032)&nbsp;
-![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github&logoColor=FFFFFF)&nbsp;
-![NPM](https://img.shields.io/badge/-NPM-05122A?style=flat&logo=npm&logoColor=CB3837)&nbsp;
+![Python](https://img.shields.io/badge/Python-3670A0?style=flat&logo=python&logoColor=ffdd54) 
+![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=flat&logo=anaconda&logoColor=white) 
+![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=flat&logo=Matplotlib&logoColor=black) 
+![NumPy](https://img.shields.io/badge/Numpy-%23013243.svg?style=flat&logo=numpy&logoColor=white) 
+![Pandas](https://img.shields.io/badge/Pandas-%23150458.svg?style=flat&logo=pandas&logoColor=white) 
+![scikit-learn](https://img.shields.io/badge/Scikit--learn-%23F7931E.svg?style=flat&logo=scikit-learn&logoColor=white) 
+![Scipy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=flat&logo=scipy&logoColor=%white) 
+![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=flat&logo=google-cloud&logoColor=white) 
+![Oracle](https://img.shields.io/badge/Oracle-F80000?style=flat&logo=oracle&logoColor=white) 
+
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=flat&logo=php&logoColor=white) 
+![C++](https://img.shields.io/badge/C++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white) 
+-->
+
 
 <br>
 
