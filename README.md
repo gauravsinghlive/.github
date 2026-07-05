@@ -1,4 +1,4 @@
-##### 🚀 Full Stack Developer | Open to Opportunities
+##### 👋 Hello, World! I'm Gaurav Singh, a Full Stack Developer
 <!--
 **gauravsingh7x/gauravsingh7x** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 -->
@@ -6,12 +6,13 @@
 
 ```json
 {
-  "welcome_msg": "Hello, World! Welcome to my digital space.",
-  "status": "Active & Open for Opportunities",
   "name": "Gaurav Singh",
   "role": "Full Stack Developer",
+  "tagline": "Crafting Code, Creating Solutions",
+  "status": "Building, Learning & Open to Opportunities",
   "location": "Lucknow, India 🇮🇳",
-  "qualification": {
+
+  "education": {
     "diploma": "Diploma in Computer Science & Engineering",
     "btech": "Bachelor of Technology in Computer Science & Engineering"
   },
