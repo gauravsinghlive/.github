@@ -1,4 +1,4 @@
-##### 👋 Hello, World! I'm Gaurav Singh, a Full Stack Developer
+##### 👋 Hi! I'm Gaurav Singh — Full Stack Developer
 <!--
 **gauravsingh7x/gauravsingh7x** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 -->
@@ -26,7 +26,9 @@
     "Full Stack Developer",
     "Frontend Developer",
     "Backend Developer"
-  ]
+  ],
+
+  "welcome_msg": "Hello, World! Welcome to my digital space."
 }
 ```
 
