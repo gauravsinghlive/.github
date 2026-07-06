@@ -9,7 +9,7 @@
   "role": "Full Stack Developer",
   "tagline": "Crafting Code, Creating Solutions",
   "status": "Building, Learning & Open to Opportunities",
-  "location": "Lucknow, India 🇮🇳",
+  "location": "Lucknow, India",
 
   "education": {
     "diploma": "Diploma in Computer Science & Engineering",
