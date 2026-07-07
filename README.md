@@ -64,8 +64,20 @@
 ![npm](https://img.shields.io/badge/npm-CB3837?style=flat&logo=npm&logoColor=white)
 
 
+<!--![](https://github-readme-stats.shion.dev/api?username=gauravsingh7x&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
+-->
+
+<!--![](https://github-readme-stats.shion.dev/api/top-langs/?username=gauravsingh7x&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+-->
+
+<!--![](https://streak-stats.demolab.com/?user=gauravsingh7x&theme=dark&hide_border=false)<br/>
+-->
+
 <h2 align="center">The Snake ate my work as a Snack. 🐍</h2>
 <p><img src="https://github.com/gauravsingh7x/gauravsingh7x/blob/output/github-snake-dark.svg" /></p>
+
+
+
 
 <!--
 ![GitHub Streak](https://streak-stats.demolab.com?user=gauravsingh7x&theme=tokyonight)
