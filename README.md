@@ -1,4 +1,6 @@
 
+<!--नेकी कर, GitHub पर डाल 🫡
+-->
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=250&size=16&pause=1000&width=460&height=40&lines=%F0%9F%91%8B+Hi!+I'm+Gaurav+Singh+%E2%80%94+Full+Stack+Developer)](https://git.io/typing-svg)
 <!--
 **gauravsingh7x/gauravsingh7x** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
