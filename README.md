@@ -76,16 +76,14 @@
 <!--![](https://streak-stats.demolab.com/?user=gauravsingh7x&theme=dark&hide_border=false)<br/>
 -->
 
-<h2 align="center">The Snake ate my work as a Snack. 🐍</h2>
-<p><img src="https://github.com/gauravsingh7x/gauravsingh7x/blob/output/github-snake-dark.svg" /></p>
-
+![](https://github-readme-activity-graph.vercel.app/graph?username=gauravsingh7x&custom_title=Contribution%20Graph&theme=github-compact)
 
 <!--
 ![GitHub Streak](https://streak-stats.demolab.com?user=gauravsingh7x&theme=tokyonight)
 -->
 
-![](https://github-readme-activity-graph.vercel.app/graph?username=gauravsingh7x&custom_title=Contribution%20Graph&theme=github-compact)
-
+<h2 align="center">The Snake ate my work as a Snack. 🐍</h2>
+<p><img src="https://github.com/gauravsingh7x/gauravsingh7x/blob/output/github-snake-dark.svg" /></p>
 
 <!--
 ![C](https://img.shields.io/badge/C-%2300599C.svg?style=flat&logo=c&logoColor=white) 
