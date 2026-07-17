@@ -49,12 +49,24 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
 
-![MySQL](https://img.shields.io/badge/MySql-4479A1.svg?style=flat&logo=mysql&logoColor=white) 
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
 [![Java-Core](https://img.shields.io/badge/Java%20Core-ED8B00?style=flat&logo=openjdk&logoColor=white)](https://www.java.com/)
 ![C#](https://img.shields.io/badge/C%23-512BD4?style=flat&logo=csharp&logoColor=white)
 ![.Net](https://img.shields.io/badge/.NET%20Core-5C2D91?style=flat&logo=.net&logoColor=white) 
 [![ASP.NET-MVC](https://img.shields.io/badge/ASP.NET%20MVC-512BD4?style=flat&logo=.net&logoColor=white)](https://dotnet.microsoft.com/apps/aspnet/mvc)
+
+
+<!--
+![SQL](https://img.shields.io/badge/SQL-003B57?style=flat&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat&logo=mongodb&logoColor=white)
 ![Microsoft SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=flat&logo=microsoftsqlserver&logoColor=white)
+
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white)](https://angular.dev/)
+
+![C](https://img.shields.io/badge/C-%2300599C.svg?style=flat&logo=c&logoColor=white) 
+-->
 
 
 ## 🛠️ Tools
@@ -66,6 +78,11 @@
 ![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=flat&logo=github&logoColor=white)
 ![npm](https://img.shields.io/badge/npm-CB3837?style=flat&logo=npm&logoColor=white)
 
+<!--
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-FF9900?style=flat&logo=amazon-aws&logoColor=white)
+![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat&logo=google-cloud&logoColor=white)
+-->
 
 <!--![](https://github-readme-stats.shion.dev/api?username=gauravsingh7x&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
 -->
@@ -86,19 +103,17 @@
 <p><img src="https://github.com/gauravsingh7x/gauravsingh7x/blob/output/github-snake-dark.svg" /></p>
 
 <!--
-![C](https://img.shields.io/badge/C-%2300599C.svg?style=flat&logo=c&logoColor=white) 
-[![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white)](https://angular.dev/)
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-
 ![Python](https://img.shields.io/badge/Python-3670A0?style=flat&logo=python&logoColor=ffdd54) 
 ![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=flat&logo=anaconda&logoColor=white) 
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=flat&logo=Matplotlib&logoColor=black) 
 ![NumPy](https://img.shields.io/badge/Numpy-%23013243.svg?style=flat&logo=numpy&logoColor=white) 
-![Pandas](https://img.shields.io/badge/Pandas-%23150458.svg?style=flat&logo=pandas&logoColor=white) 
-![scikit-learn](https://img.shields.io/badge/Scikit--learn-%23F7931E.svg?style=flat&logo=scikit-learn&logoColor=white) 
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
 ![Scipy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=flat&logo=scipy&logoColor=%white) 
 ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=flat&logo=google-cloud&logoColor=white) 
 ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=flat&logo=oracle&logoColor=white) 
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white)
+![Generative AI](https://img.shields.io/badge/Generative%20AI-FF6F00?style=flat)
 
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=flat&logo=php&logoColor=white) 
 ![C++](https://img.shields.io/badge/C++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white) 
