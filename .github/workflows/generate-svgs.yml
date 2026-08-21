@@ -1,0 +1,79 @@
+name: Generate Profile SVGs
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Run every day at 00:00 UTC
+    - cron: "0 0 * * *"
+
+  push:
+    paths:
+      - "generate_svgs.py"
+      - ".github/workflows/generate-svgs.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    name: Generate SVG assets
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # -----------------------------------------------------------------------
+      # Checkout repository
+      # -----------------------------------------------------------------------
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # -----------------------------------------------------------------------
+      # Setup Python
+      # -----------------------------------------------------------------------
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      # -----------------------------------------------------------------------
+      # Generate SVG files
+      # -----------------------------------------------------------------------
+
+      - name: Generate SVGs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python generate_svgs.py
+
+      # -----------------------------------------------------------------------
+      # Show generated files
+      # -----------------------------------------------------------------------
+
+      - name: Check generated files
+        run: |
+          ls -lh github-contribution-animation.svg
+          ls -lh terminal-card.svg
+
+      # -----------------------------------------------------------------------
+      # Commit generated SVGs
+      # -----------------------------------------------------------------------
+
+      - name: Commit generated SVGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add github-contribution-animation.svg
+          git add terminal-card.svg
+
+          if git diff --cached --quiet; then
+            echo "No SVG changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore: update profile SVGs"
+
+          git push
