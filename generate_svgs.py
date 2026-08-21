@@ -292,12 +292,9 @@ def build_terminal():
     reveal_start = len(prompt_chars) * char_dur + 0.3
     sections = [
         ("----------------------------------------------------", "#30363d", 122),
-        ("Name:  Lohitha Damisetti",                           "#e6edf3", 140),
+        ("Name:  Gaurav Singh",                           "#e6edf3", 140),
         ("Role:  Full Stack Developer",                        "#00ffcc", 158),
-        ("Stack: React  Next.js  Node.js  TypeScript  Python", "#8b949e", 176),
-        ("AI  Open Source  Backend  Cloud",                    "#8b949e", 194),
-        ("GitHub:  120 repositories",                          "#8b949e", 212),
-        ("Stars:   450+",                                      "#febc2e", 230),
+        ("Stack: React  Next.js  Node.js  TypeScript C# Java Core", "#8b949e", 176),
         ("Focus:   Building modern web experiences",           "#39d353", 248),
         ("----------------------------------------------------", "#30363d", 266),
     ]
