@@ -1,1440 +1,580 @@
-import json
+"""
+generate_terminal.py
+====================
+
+Generates:
+
+    terminal-card.svg
+
+Features:
+    • Fetches Gaurav Singh's GitHub avatar
+    • Converts the avatar into ASCII art
+    • Row-by-row left → right reveal animation
+    • Animated white cursor block
+    • macOS-style terminal chrome
+    • GitHub-style dark theme
+    • Footer with whoami command
+
+GitHub:
+    https://github.com/gauravsingh7x
+
+Run:
+    pip install Pillow
+    python generate_terminal.py
+"""
+
+import sys
 import os
-import urllib.request
-import urllib.error
+import html as _html
+
+from urllib.request import urlopen, Request
+from io import BytesIO
 
 
 # ==============================================================================
-# Configuration
+# CONFIGURATION
 # ==============================================================================
 
-GITHUB_USERNAME = "gauravsingh7x"
-GITHUB_GRAPHQL_URL = "https://api.github.com/graphql"
+USERNAME = "gauravsingh7x"
 
-# GitHub-style contribution colors
-COLORS = [
-    "#161b22",  # Level 0
-    "#0e4429",  # Level 1
-    "#006d32",  # Level 2
-    "#26a641",  # Level 3
-    "#39d353",  # Level 4
-]
+DISPLAY_NAME = "Gaurav Singh"
 
-# Near-white green flash used during reveal
-GLOW = [
-    "#21262d",
-    "#3dffa0",
-    "#57ffb0",
-    "#8dffcc",
-    "#c8ffe8",
-]
+ROLE = "Full Stack Developer · Open Source Enthusiast"
 
 
 # ==============================================================================
-# Graph configuration
+# HELPERS
 # ==============================================================================
 
-SQ = 11
-GAP = 3
-STEP = SQ + GAP
+def xe(value):
+    """
+    Escape text so it is safe inside SVG/XML.
+    """
+    return _html.escape(str(value), quote=True)
 
-GRAPH_X = 34
-GRAPH_Y = 28
 
-WEEKS = 53
-DAYS = 7
-
-MONTHS = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-]
+OUT_DIR = os.path.dirname(
+    os.path.abspath(__file__)
+)
 
 
 # ==============================================================================
-# GitHub GraphQL query
+# FETCH GITHUB AVATAR
 # ==============================================================================
 
-GRAPHQL_QUERY = """
-query($login: String!) {
-  user(login: $login) {
-    login
-    name
+print("[..] Fetching GitHub avatar ...")
 
-    contributionsCollection {
-      contributionCalendar {
-        totalContributions
+try:
 
-        months {
-          name
-          firstDay
-          totalWeeks
-          year
-        }
+    avatar_url = (
+        f"https://avatars.githubusercontent.com/"
+        f"{USERNAME}?size=400"
+    )
 
-        weeks {
-          firstDay
+    request = Request(
+        avatar_url,
+        headers={
+            "User-Agent": "Mozilla/5.0"
+        },
+    )
 
-          contributionDays {
-            date
-            contributionCount
-            contributionLevel
-            weekday
-          }
-        }
-      }
-    }
-  }
-}
+    img_bytes = urlopen(
+        request,
+        timeout=20
+    ).read()
+
+    print(
+        f"[OK] Avatar fetched "
+        f"({len(img_bytes):,} bytes)"
+    )
+
+except Exception as error:
+
+    sys.exit(
+        f"[ERR] Avatar fetch failed: {error}"
+    )
+
+
+# ==============================================================================
+# PILLOW
+# ==============================================================================
+
+try:
+
+    from PIL import Image
+
+except ImportError:
+
+    sys.exit(
+        "[ERR] Pillow is not installed.\n"
+        "Run:\n\n"
+        "    pip install Pillow"
+    )
+
+
+# ==============================================================================
+# ASCII CONFIGURATION
+# ==============================================================================
+
+# Bright pixels → light characters
+# Dark pixels   → dense characters
+
+ASCII_CHARS = "  `.-':=+*csS%#@"
+
+
+# Width and height of the ASCII portrait.
+
+ART_W = 100
+ART_H = 53
+
+
+# ==============================================================================
+# CONVERT AVATAR → GRAYSCALE
+# ==============================================================================
+
+print("[..] Converting avatar to ASCII ...")
+
+
+image = Image.open(
+    BytesIO(img_bytes)
+).convert("L")
+
+
+# Resize avatar to ASCII dimensions.
+
+image = image.resize(
+    (ART_W, ART_H),
+    Image.LANCZOS
+)
+
+
+pixels = list(
+    image.getdata()
+)
+
+
+# ==============================================================================
+# GENERATE ASCII ROWS
+# ==============================================================================
+
+rows = []
+
+
+for row_index in range(ART_H):
+
+    row = ""
+
+    for column_index in range(ART_W):
+
+        pixel = pixels[
+            row_index * ART_W
+            + column_index
+        ]
+
+        # Invert brightness:
+        #
+        # white pixel → space
+        # black pixel → @
+
+        index = int(
+            (255 - pixel)
+            / 255
+            * (len(ASCII_CHARS) - 1)
+        )
+
+        row += ASCII_CHARS[index]
+
+    rows.append(row)
+
+
+print(
+    f"[OK] ASCII portrait generated "
+    f"({ART_W} × {ART_H})"
+)
+
+
+# ==============================================================================
+# SVG LAYOUT
+# ==============================================================================
+
+WIDTH = 840
+
+ROW_HEIGHT = 15
+
+ROW_Y_START = 37
+
+FONT_SIZE = 12.9
+
+ROW_DURATION = 0.11
+
+TEXT_WIDTH = 800
+
+TEXT_X = 20
+
+
+# Footer position.
+
+FOOTER_LINE_Y = (
+    ROW_Y_START
+    + ART_H * ROW_HEIGHT
+)
+
+FOOTER_TEXT_Y = (
+    FOOTER_LINE_Y
+    + 19
+)
+
+HEIGHT = (
+    FOOTER_LINE_Y
+    + 43
+)
+
+
+# ==============================================================================
+# FOOTER
+# ==============================================================================
+
+WHOAMI_TEXT = (
+    f"{USERNAME}@github:~$ whoami "
+)
+
+
+# Approximate monospace character width.
+
+CURSOR_X = (
+    TEXT_X
+    + len(WHOAMI_TEXT) * 7.73
+)
+
+
+# ==============================================================================
+# GENERATE ASCII ROW SVG
+# ==============================================================================
+
+rows_svg = ""
+
+
+for index, row in enumerate(rows):
+
+    # Each row starts slightly after the previous row.
+
+    begin_time = (
+        index * ROW_DURATION
+    )
+
+    y_top = (
+        ROW_Y_START
+        + index * ROW_HEIGHT
+    )
+
+    y_text = (
+        y_top + 11.1
+    )
+
+    safe_row = xe(row)
+
+
+    # --------------------------------------------------------------------------
+    # Row clipping animation
+    # --------------------------------------------------------------------------
+
+    rows_svg += (
+        f'<clipPath id="row{index}">'
+        f'<rect '
+        f'x="{TEXT_X}" '
+        f'y="{y_top:.1f}" '
+        f'height="{ROW_HEIGHT}" '
+        f'width="0">'
+        f'<animate '
+        f'attributeName="width" '
+        f'from="0" '
+        f'to="{TEXT_WIDTH}" '
+        f'begin="{begin_time:.3f}s" '
+        f'dur="{ROW_DURATION}s" '
+        f'fill="freeze"/>'
+        f'</rect>'
+        f'</clipPath>\n'
+    )
+
+
+    # --------------------------------------------------------------------------
+    # ASCII row
+    # --------------------------------------------------------------------------
+
+    rows_svg += (
+        f'<g clip-path="url(#row{index})">'
+        f'<text '
+        f'xml:space="preserve" '
+        f'x="{TEXT_X}" '
+        f'y="{y_text:.1f}" '
+        f'fill="#c9d1d9" '
+        f'font-size="{FONT_SIZE}" '
+        f'textLength="{TEXT_WIDTH}" '
+        f'lengthAdjust="spacing">'
+        f'{safe_row}'
+        f'</text>'
+        f'</g>\n'
+    )
+
+
+    # --------------------------------------------------------------------------
+    # Animated cursor
+    # --------------------------------------------------------------------------
+
+    rows_svg += (
+        f'<rect '
+        f'y="{y_top + 1:.1f}" '
+        f'width="8" '
+        f'height="13" '
+        f'fill="#c9d1d9" '
+        f'opacity="0">'
+
+        f'<animate '
+        f'attributeName="x" '
+        f'from="{TEXT_X}" '
+        f'to="{TEXT_X + TEXT_WIDTH}" '
+        f'begin="{begin_time:.3f}s" '
+        f'dur="{ROW_DURATION}s" '
+        f'fill="freeze"/>'
+
+        f'<set '
+        f'attributeName="opacity" '
+        f'to="0.85" '
+        f'begin="{begin_time:.3f}s"/>'
+
+        f'<set '
+        f'attributeName="opacity" '
+        f'to="0" '
+        f'begin="{begin_time + ROW_DURATION:.3f}s"/>'
+
+        f'</rect>\n'
+    )
+
+
+# ==============================================================================
+# BUILD TERMINAL SVG
+# ==============================================================================
+
+svg = f"""<svg
+xmlns="http://www.w3.org/2000/svg"
+width="{WIDTH}"
+height="{HEIGHT}"
+viewBox="0 0 {WIDTH} {HEIGHT}"
+font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+
+<defs>
+
+  <!-- Terminal background -->
+
+  <linearGradient
+    id="terminal-bg"
+    x1="0"
+    y1="0"
+    x2="0"
+    y2="1">
+
+    <stop
+      offset="0"
+      stop-color="#111722"/>
+
+    <stop
+      offset="1"
+      stop-color="#0d1117"/>
+
+  </linearGradient>
+
+</defs>
+
+
+<!-- ====================================================================== -->
+<!-- Terminal background -->
+<!-- ====================================================================== -->
+
+<rect
+  width="{WIDTH}"
+  height="{HEIGHT}"
+  rx="12"
+  fill="url(#terminal-bg)"/>
+
+
+<!-- ====================================================================== -->
+<!-- Terminal border -->
+<!-- ====================================================================== -->
+
+<rect
+  x="0.5"
+  y="0.5"
+  width="{WIDTH - 1}"
+  height="{HEIGHT - 1}"
+  rx="12"
+  fill="none"
+  stroke="#30363d"
+  stroke-width="1"/>
+
+
+<!-- ====================================================================== -->
+<!-- Terminal header divider -->
+<!-- ====================================================================== -->
+
+<line
+  x1="0"
+  y1="30"
+  x2="{WIDTH}"
+  y2="30"
+  stroke="#30363d"/>
+
+
+<!-- ====================================================================== -->
+<!-- macOS buttons -->
+<!-- ====================================================================== -->
+
+<circle
+  cx="20"
+  cy="15"
+  r="5"
+  fill="#ff5f56"/>
+
+<circle
+  cx="36"
+  cy="15"
+  r="5"
+  fill="#ffbd2e"/>
+
+<circle
+  cx="52"
+  cy="15"
+  r="5"
+  fill="#27c93f"/>
+
+
+<!-- ====================================================================== -->
+<!-- Terminal title -->
+<!-- ====================================================================== -->
+
+<text
+  x="{WIDTH / 2:.1f}"
+  y="19"
+  fill="#7d8590"
+  font-size="12"
+  text-anchor="middle">
+
+  {xe(USERNAME)}@github: ~$ ./portrait.sh
+
+</text>
+
+
+<!-- ====================================================================== -->
+<!-- ASCII PORTRAIT -->
+<!-- ====================================================================== -->
+
+{rows_svg}
+
+
+<!-- ====================================================================== -->
+<!-- Footer divider -->
+<!-- ====================================================================== -->
+
+<line
+  x1="0"
+  y1="{FOOTER_LINE_Y:.1f}"
+  x2="{WIDTH}"
+  y2="{FOOTER_LINE_Y:.1f}"
+  stroke="#30363d"/>
+
+
+<!-- ====================================================================== -->
+<!-- Footer whoami -->
+<!-- ====================================================================== -->
+
+<text
+  x="20"
+  y="{FOOTER_TEXT_Y:.1f}"
+  fill="#7d8590"
+  font-size="13">
+
+  {xe(USERNAME)}@github:~$ whoami
+
+  <tspan fill="#c9d1d9">
+    {xe(DISPLAY_NAME)}
+  </tspan>
+
+</text>
+
+
+<!-- ====================================================================== -->
+<!-- Footer blinking cursor -->
+<!-- ====================================================================== -->
+
+<rect
+  x="{CURSOR_X:.0f}"
+  y="{FOOTER_TEXT_Y - 13:.1f}"
+  width="8"
+  height="14"
+  fill="#c9d1d9">
+
+  <animate
+    attributeName="opacity"
+    values="1;1;0;0"
+    keyTimes="0;0.5;0.51;1"
+    dur="1s"
+    repeatCount="indefinite"/>
+
+</rect>
+
+
+</svg>
 """
 
 
 # ==============================================================================
-# GitHub API
+# WRITE FILE
 # ==============================================================================
 
-def fetch_contributions():
-    """
-    Fetch the user's real GitHub contribution calendar.
+output_file = os.path.join(
+    OUT_DIR,
+    "terminal-card.svg"
+)
 
-    GitHub returns:
-      - contributionCount
-      - contributionLevel
-      - date
-      - weekday
-      - weeks
-      - months
-      - totalContributions
-    """
 
-    token = os.environ.get("GITHUB_TOKEN")
+with open(
+    output_file,
+    "w",
+    encoding="utf-8"
+) as file:
 
-    if not token:
-        raise RuntimeError(
-            "GITHUB_TOKEN environment variable is missing."
-        )
-
-    payload = {
-        "query": GRAPHQL_QUERY,
-        "variables": {
-            "login": GITHUB_USERNAME
-        },
-    }
-
-    request = urllib.request.Request(
-        GITHUB_GRAPHQL_URL,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "User-Agent": "gauravsingh7x-profile-generator",
-        },
-        method="POST",
-    )
-
-    try:
-
-        with urllib.request.urlopen(
-            request,
-            timeout=30,
-        ) as response:
-
-            data = json.loads(
-                response.read().decode("utf-8")
-            )
-
-    except urllib.error.HTTPError as error:
-
-        body = error.read().decode("utf-8", errors="replace")
-
-        raise RuntimeError(
-            f"GitHub API request failed "
-            f"({error.code}): {body}"
-        ) from error
-
-    except urllib.error.URLError as error:
-
-        raise RuntimeError(
-            f"Unable to reach GitHub API: {error.reason}"
-        ) from error
-
-    # --------------------------------------------------------------------------
-    # GraphQL errors
-    # --------------------------------------------------------------------------
-
-    if data.get("errors"):
-
-        raise RuntimeError(
-            "GitHub GraphQL error:\n"
-            + json.dumps(
-                data["errors"],
-                indent=2,
-            )
-        )
-
-    user = data.get("data", {}).get("user")
-
-    if not user:
-
-        raise RuntimeError(
-            f"GitHub user '{GITHUB_USERNAME}' was not found."
-        )
-
-    calendar = (
-        user
-        .get("contributionsCollection", {})
-        .get("contributionCalendar")
-    )
-
-    if not calendar:
-
-        raise RuntimeError(
-            "GitHub contribution calendar was not returned."
-        )
-
-    return user, calendar
+    file.write(svg)
 
 
 # ==============================================================================
-# Contribution level conversion
+# RESULT
 # ==============================================================================
 
-def contribution_level(day):
-    """
-    Convert GitHub's contributionLevel enum into 0-4.
-
-    GitHub normally returns:
-
-        NONE
-        FIRST_QUARTILE
-        SECOND_QUARTILE
-        THIRD_QUARTILE
-        FOURTH_QUARTILE
-    """
-
-    level = day.get("contributionLevel", "NONE")
-
-    mapping = {
-        "NONE": 0,
-        "FIRST_QUARTILE": 1,
-        "SECOND_QUARTILE": 2,
-        "THIRD_QUARTILE": 3,
-        "FOURTH_QUARTILE": 4,
-    }
-
-    return mapping.get(level, 0)
-
-
-# ==============================================================================
-# Flatten GitHub contribution weeks
-# ==============================================================================
-
-def flatten_contributions(calendar):
-    """
-    Convert GitHub's nested week/day structure into a list.
-
-    Returns:
-
-        [
-            {
-                "date": "...",
-                "count": 5,
-                "level": 2,
-                "weekday": 3
-            },
-            ...
-        ]
-    """
-
-    days = []
-
-    for week in calendar.get("weeks", []):
-
-        for day in week.get(
-            "contributionDays",
-            [],
-        ):
-
-            days.append(
-                {
-                    "date": day["date"],
-                    "count": day["contributionCount"],
-                    "level": contribution_level(day),
-                    "weekday": day["weekday"],
-                }
-            )
-
-    return days
-
-
-# ==============================================================================
-# Build contribution SVG
-# ==============================================================================
-
-def build_contrib(calendar):
-
-    W = 850
-    H = 165
-
-    lines = []
-
-    # --------------------------------------------------------------------------
-    # SVG
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        f'<svg xmlns="http://www.w3.org/2000/svg" '
-        f'width="{W}" height="{H}" '
-        f'viewBox="0 0 {W} {H}">'
-    )
-
-    lines.append("<defs>")
-
-    # --------------------------------------------------------------------------
-    # Cell glow
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<filter id="cellglow" '
-        'x="-70%" y="-70%" '
-        'width="240%" height="240%">'
-
-        '<feGaussianBlur '
-        'stdDeviation="2" '
-        'result="blur"/>'
-
-        '<feMerge>'
-
-        '<feMergeNode in="blur"/>'
-
-        '<feMergeNode in="SourceGraphic"/>'
-
-        '</feMerge>'
-
-        '</filter>'
-    )
-
-    lines.append("</defs>")
-
-    # --------------------------------------------------------------------------
-    # Card background
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        f'<rect width="{W}" height="{H}" '
-        'rx="16" '
-        'fill="#0d1117" '
-        'stroke="#30363d" '
-        'stroke-width="1"/>'
-    )
-
-    # ==========================================================================
-    # GitHub contribution weeks
-    # ==========================================================================
-
-    weeks = calendar.get("weeks", [])
-
-    # GitHub normally returns approximately one year's worth of weeks.
-    # We render the latest 53 weeks so the visual stays within the original
-    # dimensions.
-    weeks = weeks[-WEEKS:]
-
-    # --------------------------------------------------------------------------
-    # Month labels
-    # --------------------------------------------------------------------------
-
-    month_positions = {}
-
-    for index, week in enumerate(weeks):
-
-        first_day = week.get("firstDay", "")
-
-        if len(first_day) >= 7:
-
-            month_key = first_day[:7]
-
-            if month_key not in month_positions:
-
-                month_positions[month_key] = index
-
-    for month_key, week_index in month_positions.items():
-
-        try:
-            month_number = int(
-                month_key.split("-")[1]
-            )
-
-            month_name = MONTHS[
-                month_number - 1
-            ]
-
-        except (ValueError, IndexError):
-
-            continue
-
-        x = (
-            GRAPH_X
-            + week_index * STEP
-        )
-
-        lines.append(
-            f'<text x="{x}" y="18" '
-            'fill="#8b949e" '
-            'font-size="10" '
-            'font-family="system-ui,sans-serif">'
-            f'{month_name}'
-            '</text>'
-        )
-
-    # --------------------------------------------------------------------------
-    # Weekday labels
-    # --------------------------------------------------------------------------
-
-    for row, label in enumerate(
-        [
-            "Mon",
-            "",
-            "Wed",
-            "",
-            "Fri",
-            "",
-            "",
-        ]
-    ):
-
-        if label:
-
-            y = (
-                GRAPH_Y
-                + row * STEP
-                + SQ
-                - 1
-            )
-
-            lines.append(
-                f'<text x="0" y="{y}" '
-                'fill="#8b949e" '
-                'font-size="9" '
-                'font-family="system-ui,sans-serif">'
-                f'{label}'
-                '</text>'
-            )
-
-    # ==========================================================================
-    # Animation
-    # ==========================================================================
-
-    anim_dur = 4.5
-    pause = 2.5
-    total = anim_dur + pause
-
-    # Lower = steeper diagonal.
-    SLANT = 0.6
-
-    max_diag = (
-        max(len(weeks) - 1, 1)
-        + (DAYS - 1) * SLANT
-    )
-
-    # ==========================================================================
-    # Render contribution cells
-    # ==========================================================================
-
-    for col, week in enumerate(weeks):
-
-        contribution_days = week.get(
-            "contributionDays",
-            [],
-        )
-
-        # Map GitHub weekday to row.
-        #
-        # GitHub:
-        #   0 = Sunday
-        #   1 = Monday
-        #   ...
-        #   6 = Saturday
-        #
-        # Our graph:
-        #   0 = Monday
-        #   ...
-        #   6 = Sunday
-
-        day_by_row = {}
-
-        for day in contribution_days:
-
-            github_weekday = day.get(
-                "weekday",
-                0,
-            )
-
-            if github_weekday == 0:
-                row = 6
-            else:
-                row = github_weekday - 1
-
-            day_by_row[row] = day
-
-        # ----------------------------------------------------------------------
-        # Every row in the week
-        # ----------------------------------------------------------------------
-
-        for row in range(DAYS):
-
-            day = day_by_row.get(row)
-
-            if not day:
-                continue
-
-            level = contribution_level(day)
-
-            count = day.get(
-                "contributionCount",
-                0,
-            )
-
-            color = COLORS[level]
-            glow = GLOW[level]
-
-            x = GRAPH_X + col * STEP
-            y = GRAPH_Y + row * STEP
-
-            square_id = (
-                f"s{col}_{row}"
-            )
-
-            # ------------------------------------------------------------------
-            # Diagonal reveal
-            # ------------------------------------------------------------------
-
-            diag = (
-                col
-                + row * SLANT
-            )
-
-            reveal_time = (
-                diag
-                / max_diag
-            ) * anim_dur
-
-            t0 = reveal_time / total
-
-            # Brief glint
-            t1 = min(
-                t0 + 0.012,
-                0.97,
-            )
-
-            t2 = min(
-                t0 + 0.05,
-                0.99,
-            )
-
-            # ------------------------------------------------------------------
-            # Glow for high contribution levels
-            # ------------------------------------------------------------------
-
-            filter_attribute = (
-                ' filter="url(#cellglow)"'
-                if level >= 3
-                else ""
-            )
-
-            # ------------------------------------------------------------------
-            # Contribution cell
-            # ------------------------------------------------------------------
-
-            lines.append(
-                f'<rect id="{square_id}" '
-                f'x="{x}" y="{y}" '
-                f'width="{SQ}" '
-                f'height="{SQ}" '
-                'rx="2" '
-                f'fill="{color}" '
-                'opacity="0"'
-                f'{filter_attribute}>'
-            )
-
-            # ------------------------------------------------------------------
-            # Fade-in
-            # ------------------------------------------------------------------
-
-            lines.append(
-                '<animate '
-                'attributeName="opacity" '
-                'values="0;0;1;1" '
-                f'keyTimes="0;{t0:.4f};'
-                f'{t1:.4f};1" '
-                f'dur="{total}s" '
-                'repeatCount="indefinite"/>'
-            )
-
-            # ------------------------------------------------------------------
-            # Shine
-            # ------------------------------------------------------------------
-
-            if level > 0:
-
-                lines.append(
-                    '<animate '
-                    'attributeName="fill" '
-                    f'values="{color};{color};'
-                    f'{glow};{color}" '
-                    f'keyTimes="0;{t0:.4f};'
-                    f'{t1:.4f};{t2:.4f}" '
-                    f'dur="{total}s" '
-                    'repeatCount="indefinite" '
-                    'calcMode="spline" '
-                    'keySplines="'
-                    '0 0 1 1;'
-                    '0.1 0 0.2 1;'
-                    '0.4 0 0.6 1'
-                    '"/>'
-                )
-
-            lines.append("</rect>")
-
-            # ------------------------------------------------------------------
-            # Small white highlight
-            # ------------------------------------------------------------------
-
-            if level > 0:
-
-                highlight_x = x + 2
-                highlight_y = y + 2
-
-                lines.append(
-                    f'<rect '
-                    f'x="{highlight_x}" '
-                    f'y="{highlight_y}" '
-                    'width="4" '
-                    'height="2" '
-                    'rx="1" '
-                    'fill="white" '
-                    'opacity="0" '
-                    'pointer-events="none">'
-                )
-
-                lines.append(
-                    '<animate '
-                    'attributeName="opacity" '
-                    'values="0;0;0.55;0" '
-                    f'keyTimes="0;{t0:.4f};'
-                    f'{t1:.4f};{t2:.4f}" '
-                    f'dur="{total}s" '
-                    'repeatCount="indefinite" '
-                    'calcMode="spline" '
-                    'keySplines="'
-                    '0 0 1 1;'
-                    '0 0 0.3 1;'
-                    '0.5 0 1 1'
-                    '"/>'
-                )
-
-                lines.append("</rect>")
-
-            # ------------------------------------------------------------------
-            # Tooltip
-            #
-            # The SVG title makes the real contribution count visible when
-            # supported by the renderer.
-            # ------------------------------------------------------------------
-
-            lines.append(
-                f'<title>'
-                f'{day["date"]}: '
-                f'{count} contributions'
-                f'</title>'
-            )
-
-    # ==========================================================================
-    # Hover
-    # ==========================================================================
-
-    lines.append(
-        '<style>'
-
-        'rect[id^="s"]{'
-        'transition:filter .15s'
-        '}'
-
-        'rect[id^="s"]:hover{'
-        'filter:brightness(1.65) '
-        'drop-shadow(0 0 5px #39d353)'
-        '}'
-
-        '</style>'
-    )
-
-    lines.append("</svg>")
-
-    return "\n".join(lines)
-
-
-# ==============================================================================
-# Terminal SVG
-# ==============================================================================
-
-def build_terminal():
-
-    W = 900
-    H = 520
-
-    lines = []
-
-    # --------------------------------------------------------------------------
-    # SVG
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        f'<svg xmlns="http://www.w3.org/2000/svg" '
-        f'width="{W}" height="{H}" '
-        f'viewBox="0 0 {W} {H}">'
-    )
-
-    lines.append("<defs>")
-
-    # --------------------------------------------------------------------------
-    # Background
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<radialGradient id="bg1" '
-        'cx="20%" cy="30%" r="60%">'
-
-        '<stop offset="0%" '
-        'stop-color="#0d2137"/>'
-
-        '<stop offset="100%" '
-        'stop-color="#0d1117"/>'
-
-        '<animate '
-        'attributeName="cx" '
-        'values="20%;80%;20%" '
-        'dur="10s" '
-        'repeatCount="indefinite"/>'
-
-        '<animate '
-        'attributeName="cy" '
-        'values="30%;70%;30%" '
-        'dur="12s" '
-        'repeatCount="indefinite"/>'
-
-        '</radialGradient>'
-
-        '<radialGradient id="bg2" '
-        'cx="80%" cy="70%" r="50%">'
-
-        '<stop offset="0%" '
-        'stop-color="#0a1a2e" '
-        'stop-opacity="0.8"/>'
-
-        '<stop offset="100%" '
-        'stop-color="#0d1117" '
-        'stop-opacity="0"/>'
-
-        '</radialGradient>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Terminal glow
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<filter id="termglow">'
-
-        '<feGaussianBlur '
-        'stdDeviation="8" '
-        'result="blur"/>'
-
-        '<feMerge>'
-
-        '<feMergeNode in="blur"/>'
-
-        '<feMergeNode in="SourceGraphic"/>'
-
-        '</feMerge>'
-
-        '</filter>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Glass
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<linearGradient id="glass" '
-        'x1="0%" y1="0%" '
-        'x2="0%" y2="100%">'
-
-        '<stop offset="0%" '
-        'stop-color="#161b22" '
-        'stop-opacity="0.95"/>'
-
-        '<stop offset="100%" '
-        'stop-color="#0d1117" '
-        'stop-opacity="0.98"/>'
-
-        '</linearGradient>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Header
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<linearGradient id="headerGrad" '
-        'x1="0%" y1="0%" '
-        'x2="0%" y2="100%">'
-
-        '<stop offset="0%" '
-        'stop-color="#1c2128"/>'
-
-        '<stop offset="100%" '
-        'stop-color="#161b22"/>'
-
-        '</linearGradient>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Border
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<linearGradient id="borderGlow" '
-        'x1="0%" y1="0%" '
-        'x2="100%" y2="100%">'
-
-        '<stop offset="0%" '
-        'stop-color="#00ffcc" '
-        'stop-opacity="0.6"/>'
-
-        '<stop offset="50%" '
-        'stop-color="#0ea5e9" '
-        'stop-opacity="0.3"/>'
-
-        '<stop offset="100%" '
-        'stop-color="#7c3aed" '
-        'stop-opacity="0.6"/>'
-
-        '<animate '
-        'attributeName="x1" '
-        'values="0%;100%;0%" '
-        'dur="4s" '
-        'repeatCount="indefinite"/>'
-
-        '<animate '
-        'attributeName="x2" '
-        'values="100%;0%;100%" '
-        'dur="4s" '
-        'repeatCount="indefinite"/>'
-
-        '</linearGradient>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Scanlines
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<pattern id="scanlines" '
-        'x="0" y="0" '
-        'width="900" height="3" '
-        'patternUnits="userSpaceOnUse">'
-
-        '<line '
-        'x1="0" y1="1" '
-        'x2="900" y2="1" '
-        'stroke="white" '
-        'stroke-opacity="0.03" '
-        'stroke-width="1"/>'
-
-        '</pattern>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Grid
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<pattern id="grid" '
-        'x="0" y="0" '
-        'width="40" height="40" '
-        'patternUnits="userSpaceOnUse">'
-
-        '<path '
-        'd="M 40 0 L 0 0 0 40" '
-        'fill="none" '
-        'stroke="#ffffff" '
-        'stroke-width="0.3" '
-        'stroke-opacity="0.04"/>'
-
-        '</pattern>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Clip
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<clipPath id="termclip">'
-
-        '<rect '
-        'x="30" y="30" '
-        'width="840" '
-        'height="460" '
-        'rx="14"/>'
-
-        '</clipPath>'
-    )
-
-    lines.append("</defs>")
-
-    # ==========================================================================
-    # Background
-    # ==========================================================================
-
-    lines.append(
-        f'<rect width="{W}" height="{H}" '
-        'fill="url(#bg1)"/>'
-    )
-
-    lines.append(
-        f'<rect width="{W}" height="{H}" '
-        'fill="url(#bg2)"/>'
-    )
-
-    lines.append(
-        f'<rect width="{W}" height="{H}" '
-        'fill="url(#grid)"/>'
-    )
-
-    # ==========================================================================
-    # Particles
-    #
-    # Kept deterministic so the terminal background does not change every run.
-    # ==========================================================================
-
-    particle_seed = 42
-
-    import random
-
-    particle_random = random.Random(
-        particle_seed
-    )
-
-    particles = [
-        (
-            particle_random.randint(50, 850),
-            particle_random.randint(50, 470),
-            round(
-                particle_random.uniform(
-                    0.3,
-                    1.2,
-                ),
-                1,
-            ),
-            round(
-                particle_random.uniform(
-                    3,
-                    9,
-                ),
-                1,
-            ),
-        )
-        for _ in range(28)
-    ]
-
-    for px, py, radius, duration in particles:
-
-        dy = particle_random.randint(
-            -30,
-            30,
-        )
-
-        lines.append(
-            f'<circle '
-            f'cx="{px}" '
-            f'cy="{py}" '
-            f'r="{radius}" '
-            'fill="#00ffcc" '
-            'opacity="0.15">'
-
-            '<animate '
-            'attributeName="cy" '
-            f'values="{py};{py + dy};{py}" '
-            f'dur="{duration}s" '
-            'repeatCount="indefinite"/>'
-
-            '<animate '
-            'attributeName="opacity" '
-            'values="0.05;0.25;0.05" '
-            f'dur="{duration}s" '
-            'repeatCount="indefinite"/>'
-
-            '</circle>'
-        )
-
-    # ==========================================================================
-    # Border
-    # ==========================================================================
-
-    lines.append(
-        '<rect '
-        'x="28" y="28" '
-        'width="844" '
-        'height="464" '
-        'rx="15" '
-        'fill="none" '
-        'stroke="url(#borderGlow)" '
-        'stroke-width="2">'
-
-        '<animate '
-        'attributeName="stroke-opacity" '
-        'values="0.7;1;0.7" '
-        'dur="3s" '
-        'repeatCount="indefinite"/>'
-
-        '</rect>'
-    )
-
-    # ==========================================================================
-    # Floating terminal
-    # ==========================================================================
-
-    lines.append("<g>")
-
-    lines.append(
-        '<animateTransform '
-        'attributeName="transform" '
-        'type="translate" '
-        'values="0 0;0 -4;0 0" '
-        'dur="4s" '
-        'repeatCount="indefinite" '
-        'calcMode="spline" '
-        'keySplines="'
-        '0.45 0 0.55 1;'
-        '0.45 0 0.55 1'
-        '"/>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Body
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<rect '
-        'x="30" y="30" '
-        'width="840" '
-        'height="460" '
-        'rx="14" '
-        'fill="url(#glass)" '
-        'stroke="#30363d" '
-        'stroke-width="1"/>'
-    )
-
-    lines.append(
-        '<rect '
-        'x="30" y="30" '
-        'width="840" '
-        'height="80" '
-        'rx="14" '
-        'fill="white" '
-        'fill-opacity="0.025" '
-        'clip-path="url(#termclip)"/>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Header
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<rect '
-        'x="30" y="30" '
-        'width="840" '
-        'height="44" '
-        'rx="14" '
-        'fill="url(#headerGrad)"/>'
-    )
-
-    lines.append(
-        '<rect '
-        'x="30" y="58" '
-        'width="840" '
-        'height="16" '
-        'fill="url(#headerGrad)"/>'
-    )
-
-    lines.append(
-        '<line '
-        'x1="30" y1="74" '
-        'x2="870" y2="74" '
-        'stroke="#30363d" '
-        'stroke-width="1"/>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Buttons
-    # --------------------------------------------------------------------------
-
-    for fill_color, button_x in [
-        ("#ff5f57", 55),
-        ("#febc2e", 79),
-        ("#28c840", 103),
-    ]:
-
-        lines.append(
-            f'<circle '
-            f'cx="{button_x}" '
-            'cy="52" '
-            'r="7" '
-            f'fill="{fill_color}"/>'
-        )
-
-    # --------------------------------------------------------------------------
-    # Title
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<text '
-        'x="450" '
-        'y="57" '
-        'text-anchor="middle" '
-        'fill="#8b949e" '
-        'font-size="13" '
-        'font-family="ui-monospace,monospace">'
-        '~/portfolio'
-        '</text>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Scanlines
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<rect '
-        'x="30" '
-        'y="74" '
-        'width="840" '
-        'height="416" '
-        'fill="url(#scanlines)" '
-        'clip-path="url(#termclip)"/>'
-    )
-
-    # --------------------------------------------------------------------------
-    # Scan sweep
-    # --------------------------------------------------------------------------
-
-    lines.append(
-        '<rect '
-        'x="30" '
-        'y="74" '
-        'width="840" '
-        'height="2" '
-        'fill="white" '
-        'fill-opacity="0.04" '
-        'clip-path="url(#termclip)">'
-
-        '<animate '
-        'attributeName="y" '
-        'values="74;490;74" '
-        'dur="5s" '
-        'repeatCount="indefinite" '
-        'calcMode="spline" '
-        'keySplines="'
-        '0.4 0 0.6 1;'
-        '0.4 0 0.6 1'
-        '"/>'
-
-        '</rect>'
-    )
-
-    # ==========================================================================
-    # Typewriter
-    # ==========================================================================
-
-    prompt_chars = list(
-        "$ whoami"
-    )
-
-    typing_dur = 8.0
-    char_dur = 0.12
-    delete_start = 1.5
-
-    lines.append(
-        '<text '
-        'x="56" '
-        'y="106" '
-        'font-family="ui-monospace,Menlo,monospace" '
-        'font-size="14" '
-        'fill="#00ffcc">'
-    )
-
-    for i, char in enumerate(
-        prompt_chars
-    ):
-
-        a0 = (
-            i * char_dur
-        ) / typing_dur
-
-        a1 = min(
-            (
-                len(prompt_chars)
-                * char_dur
-                + delete_start
-                + (
-                    len(prompt_chars)
-                    - i
-                    - 1
-                )
-                * char_dur
-                * 0.5
-            ) / typing_dur,
-            0.98,
-        )
-
-        lines.append(
-            f'<tspan opacity="0">'
-            f'{char}'
-
-            '<animate '
-            'attributeName="opacity" '
-            'values="0;0;1;1;0;0" '
-            f'keyTimes="0;{a0:.3f};'
-            f'{min(a0 + 0.01, 0.99):.3f};'
-            f'{a1:.3f};'
-            f'{min(a1 + 0.02, 0.99):.3f};1" '
-            f'dur="{typing_dur}s" '
-            'repeatCount="indefinite"/>'
-
-            '</tspan>'
-        )
-
-    lines.append("</text>")
-
-    # ==========================================================================
-    # Cursor
-    # ==========================================================================
-
-    cursor_end_x = (
-        56
-        + len(prompt_chars)
-        * 8.5
-    )
-
-    typing_end = (
-        len(prompt_chars)
-        * char_dur
-        / typing_dur
-    )
-
-    lines.append(
-        '<rect '
-        'x="56" '
-        'y="92" '
-        'width="8" '
-        'height="14" '
-        'fill="#00ffcc" '
-        'rx="1">'
-
-        '<animate '
-        'attributeName="x" '
-        f'values="56;'
-        f'{cursor_end_x:.0f};56" '
-        f'keyTimes="0;'
-        f'{typing_end:.3f};1" '
-        f'dur="{typing_dur}s" '
-        'repeatCount="indefinite"/>'
-
-        '<animate '
-        'attributeName="opacity" '
-        'values="1;0;1" '
-        'dur="0.8s" '
-        'repeatCount="indefinite"/>'
-
-        '</rect>'
-    )
-
-    # ==========================================================================
-    # Profile information
-    # ==========================================================================
-
-    reveal_start = (
-        len(prompt_chars)
-        * char_dur
-        + 0.3
-    )
-
-    sections = [
-        (
-            "----------------------------------------------------",
-            "#30363d",
-            122,
-        ),
-        (
-            "Name:  Gaurav Singh",
-            "#e6edf3",
-            140,
-        ),
-        (
-            "Role:  Full Stack Developer",
-            "#00ffcc",
-            158,
-        ),
-        (
-            "Stack:  React  Next.js  Node.js  TypeScript C# Java Core",
-            "#8b949e",
-            176,
-        ),
-        (
-            "Focus:  Building modern web experiences",
-            "#39d353",
-            194,
-        ),
-        (
-            "----------------------------------------------------",
-            "#30363d",
-            212,
-        ),
-    ]
-
-    for index, (
-        text,
-        color,
-        y_position,
-    ) in enumerate(sections):
-
-        at = min(
-            (
-                reveal_start
-                + index * 0.28
-            ) / typing_dur,
-            0.97,
-        )
-
-        lines.append(
-            '<text '
-            f'x="56" '
-            f'y="{y_position}" '
-            'font-family="ui-monospace,Menlo,monospace" '
-            'font-size="12.5" '
-            f'fill="{color}" '
-            'opacity="0">'
-
-            f'{text}'
-
-            '<animate '
-            'attributeName="opacity" '
-            'values="0;0;1;1" '
-            f'keyTimes="0;{at:.3f};'
-            f'{min(at + 0.04, 0.99):.3f};1" '
-            f'dur="{typing_dur}s" '
-            'repeatCount="indefinite"/>'
-
-            '</text>'
-        )
-
-    lines.append("</g>")
-
-    lines.append("</svg>")
-
-    return "\n".join(lines)
-
-
-# ==============================================================================
-# Main
-# ==============================================================================
-
-def main():
-
-    print(
-        f"[INFO] Fetching real GitHub contributions "
-        f"for {GITHUB_USERNAME}..."
-    )
-
-    user, calendar = fetch_contributions()
-
-    total = calendar[
-        "totalContributions"
-    ]
-
-    print(
-        f"[INFO] GitHub user: "
-        f"{user.get('name') or user['login']}"
-    )
-
-    print(
-        f"[INFO] Total contributions: {total}"
-    )
-
-    weeks = calendar.get(
-        "weeks",
-        [],
-    )
-
-    print(
-        f"[INFO] Contribution weeks received: "
-        f"{len(weeks)}"
-    )
-
-    # --------------------------------------------------------------------------
-    # Generate contribution SVG
-    # --------------------------------------------------------------------------
-
-    contribution_svg = build_contrib(
-        calendar
-    )
-
-    with open(
-        "github-contribution-animation.svg",
-        "w",
-        encoding="utf-8",
-    ) as file:
-
-        file.write(
-            contribution_svg
-        )
-
-    print(
-        "[OK] github-contribution-animation.svg written"
-    )
-
-    # --------------------------------------------------------------------------
-    # Generate terminal SVG
-    # --------------------------------------------------------------------------
-
-    terminal_svg = build_terminal()
-
-    with open(
-        "terminal-card.svg",
-        "w",
-        encoding="utf-8",
-    ) as file:
-
-        file.write(
-            terminal_svg
-        )
-
-    print(
-        "[OK] terminal-card.svg written"
-    )
-
-
-# ==============================================================================
-# Entry point
-# ==============================================================================
-
-if __name__ == "__main__":
-    main()
+file_size = (
+    os.path.getsize(output_file)
+    // 1024
+)
+
+
+print()
+print(
+    "[OK] terminal-card.svg generated"
+)
+
+print(
+    f"     Size: {WIDTH} × {HEIGHT}px"
+)
+
+print(
+    f"     File: {file_size} KB"
+)
+
+print(
+    f"     User: {DISPLAY_NAME}"
+)
+
+print(
+    f"     GitHub: @{USERNAME}"
+)
+
+print()
+print("Done!")
