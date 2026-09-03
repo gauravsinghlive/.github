@@ -27,13 +27,14 @@
     "Backend Developer"
   ],
 
-  "welcome_msg": "Hello, World! Welcome to my digital space."
+  "welcome_message": "Hello, World! Welcome to my digital space."
 }
 ```
 
+
 | 🌟 Let's Connect | 🧠 What I'm Learning & Writing | 🌍 Find Me Around the Web | 👀 Visitors |
 |-------------------------|-------------------------------|--------------------------|-------------------|
-| [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/gauravsingh7x) [![Email](https://img.shields.io/badge/Mail-D14836?logo=gmail&logoColor=white)](mailto:gauravsingh7x@outlook.in) [![Portfolio](https://img.shields.io/badge/Portfolio-000000?logo=vercel&logoColor=white)](https://www.gauravsingh.live/) [![Google Play](https://img.shields.io/badge/Google_Play-414141?logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.gauravsingh.live) | [![Medium](https://img.shields.io/badge/Medium-%23000000.svg?logo=medium&logoColor=white)](https://medium.com/@gauravsingh7x) [![Dev.to](https://img.shields.io/badge/Dev.to-0A0A0A?logo=devdotto&logoColor=white)](https://dev.to/gauravsingh7x) | [![X](https://img.shields.io/badge/-000000?style=flat&logo=x&logoColor=white)](https://x.com/gauravsingh7x) [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white)](https://instagram.com/gauravsingh7x) [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=flat&logo=facebook&logoColor=white)](https://facebook.com/gauravsingh7x) | ![](https://komarev.com/ghpvc/?username=gauravsingh7x&label=You're+Here&color=0e75b6&style=flat) |
+| [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/gauravsingh7x) [![Email](https://img.shields.io/badge/Mail-D14836?logo=gmail&logoColor=white)](mailto:gauravsingh7x@outlook.in) [![Portfolio](https://img.shields.io/badge/Portfolio-000000?logo=vercel&logoColor=white)](https://www.gauravsingh.live/) [![Google Play](https://img.shields.io/badge/Google_Play-414141?logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.gauravsingh.live) | [![Medium](https://img.shields.io/badge/Medium-%23000000.svg?logo=medium&logoColor=white)](https://medium.com/@gauravsingh7x) [![Dev.to](https://img.shields.io/badge/Dev.to-0A0A0A?logo=devdotto&logoColor=white)](https://dev.to/gauravsingh7x) | [![X](https://img.shields.io/badge/-000000?style=flat&logo=x&logoColor=white)](https://x.com/gauravsingh7x) [![Instagram](https://img.shields.io/badge/-E4405F?style=flat&logo=instagram&logoColor=white)](https://instagram.com/gauravsingh7x) [![Facebook](https://img.shields.io/badge/-1877F2?style=flat&logo=facebook&logoColor=white)](https://facebook.com/gauravsingh7x) [![Telegram](https://img.shields.io/badge/-26A5E4?style=flat&logo=telegram&logoColor=white)](https://t.me/gauravsingh7x) [![WhatsApp](https://img.shields.io/badge/-25D366?style=flat&logo=whatsapp&logoColor=white)](https://wa.me/gauravsingh7x) | ![](https://komarev.com/ghpvc/?username=gauravsingh7x&label=You're+Here&color=0e75b6&style=flat) |
 
 
 <!--
