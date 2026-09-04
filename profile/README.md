@@ -38,7 +38,7 @@
 
 
 <!--
-![](https://komarev.com/ghpvc/?username=gauravsinghlive&label=You're+Here&color=0e75b6&style=flat)
+![](https://komarev.com/ghpvc/?username=gauravsingh&label=You're+Here&color=0e75b6&style=flat)
 
 
 <h2>⚡ Tech Stack & Engineering Arsenal</h2>
