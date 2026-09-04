@@ -34,7 +34,7 @@
 
 | 🌟 Let's Connect | 🧠 What I'm Learning & Writing | 🌍 Find Me Around the Web | 👀 Visitors |
 |-------------------------|-------------------------------|--------------------------|-------------------|
-| [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/gauravsingh7x) [![Email](https://img.shields.io/badge/Mail-D14836?logo=gmail&logoColor=white)](mailto:gauravsingh7x@outlook.in) [![Portfolio](https://img.shields.io/badge/Portfolio-000000?logo=vercel&logoColor=white)](https://www.gauravsingh.live/) [![Google Play](https://img.shields.io/badge/Google_Play-414141?logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.gauravsingh.live) | [![Medium](https://img.shields.io/badge/Medium-%23000000.svg?logo=medium&logoColor=white)](https://medium.com/@gauravsingh7x) [![Dev.to](https://img.shields.io/badge/Dev.to-0A0A0A?logo=devdotto&logoColor=white)](https://dev.to/gauravsingh7x) | [![X](https://img.shields.io/badge/-000000?style=flat&logo=x&logoColor=white)](https://x.com/gauravsingh7x) [![Instagram](https://img.shields.io/badge/-E4405F?style=flat&logo=instagram&logoColor=white)](https://instagram.com/gauravsingh7x) [![Facebook](https://img.shields.io/badge/-1877F2?style=flat&logo=facebook&logoColor=white)](https://facebook.com/gauravsingh7x) [![Telegram](https://img.shields.io/badge/-26A5E4?style=flat&logo=telegram&logoColor=white)](https://t.me/gauravsingh7x) [![WhatsApp](https://img.shields.io/badge/-25D366?style=flat&logo=whatsapp&logoColor=white)](https://wa.me/gauravsingh7x) | ![](https://komarev.com/ghpvc/?username=gauravsingh7x&label=You're+Here&color=0e75b6&style=flat) |
+| [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/gauravsinghlive) [![Email](https://img.shields.io/badge/Mail-D14836?logo=gmail&logoColor=white)](mailto:gauravsinghlive@outlook.com) [![Portfolio](https://img.shields.io/badge/Portfolio-000000?logo=vercel&logoColor=white)](https://www.gauravsingh.live/) [![Google Play](https://img.shields.io/badge/Google_Play-414141?logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.gauravsingh.live) | [![Medium](https://img.shields.io/badge/Medium-%23000000.svg?logo=medium&logoColor=white)](https://medium.com/@gauravsinghlive) [![Dev.to](https://img.shields.io/badge/Dev.to-0A0A0A?logo=devdotto&logoColor=white)](https://dev.to/gauravsinghlive) | [![X](https://img.shields.io/badge/-000000?style=flat&logo=x&logoColor=white)](https://x.com/gauravsinghliv) [![Instagram](https://img.shields.io/badge/-E4405F?style=flat&logo=instagram&logoColor=white)](https://instagram.com/gauravsinghliv) [![Facebook](https://img.shields.io/badge/-1877F2?style=flat&logo=facebook&logoColor=white)](https://facebook.com/gauravsinghliv) [![Threads](https://img.shields.io/badge/-000000?style=flat&logo=threads&logoColor=white)](https://www.threads.com/@gauravsinghliv) [![Telegram](https://img.shields.io/badge/-26A5E4?style=flat&logo=telegram&logoColor=white)](https://t.me/gauravsinghlive) [![WhatsApp](https://img.shields.io/badge/-25D366?style=flat&logo=whatsapp&logoColor=white)](https://wa.me/gauravsingh.live) | ![](https://komarev.com/ghpvc/?username=gauravsinghlive&label=You're+Here&color=0e75b6&style=flat) |
 
 
 <!--
@@ -117,9 +117,9 @@ GitHub Analytics & Open Source Activity
 </p>
 -->
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=gauravsingh7x&theme=tokyo-night&bg_color=0D1117&hide_border=true&custom_title=Activity%20Graph)
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=gauravsinghlive&theme=tokyo-night&bg_color=0D1117&hide_border=true&custom_title=Activity%20Graph)
  <p>
-   <img src="https://github-readme-streak-stats.herokuapp.com/?user=gauravsingh7x&theme=tokyonight&hide_border=true&background=0D1117&dates=0D1117" alt="GitHub Streak" width="97%" />
+   <img src="https://github-readme-streak-stats.herokuapp.com/?user=gauravsinghlive&theme=tokyonight&hide_border=true&background=0D1117&dates=0D1117" alt="GitHub Streak" width="97%" />
 <!--  
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=gauravsingh7x&theme=tokyonight&hide_border=true&background=0D1117" alt="GitHub Streak" width="97%" />
 -->
@@ -127,7 +127,7 @@ GitHub Analytics & Open Source Activity
 
  <p>
    <h2 align="center">The Snake ate my work as a Snack.🐍</h2>
-   <img src="https://raw.githubusercontent.com/gauravsingh7x/gauravsingh7x/output/github-contribution-grid-snake-dark.svg" alt="Snake Contribution Graph" width="97%" />
+   <img src="https://raw.githubusercontent.com/gauravsinghlive/gauravsinghlive/output/github-contribution-grid-snake-dark.svg" alt="Snake Contribution Graph" width="97%" />
  </p>
 
  <p align="center">
