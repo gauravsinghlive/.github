@@ -24,7 +24,7 @@ jobs:
         uses: Platane/snk/svg-only@v3
 
         with:
-          github_user_name: gauravsinghlive
+          github_user_name: ${{ github.repository_owner }}
 
           outputs: |
             dist/github-contribution-grid-snake.svg?color_dots=#151B23,#9BE9A8,#40C463,#30A14E,#216E39&color_snake=#166534
