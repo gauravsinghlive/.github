@@ -23,8 +23,8 @@
 
   "open_to": [
     "Full Stack Developer",
-    "Frontend Developer",
-    "Backend Developer"
+    "Backend Developer",
+    "Frontend Developer"
   ],
 
   "welcome_message": "Hello, World! Welcome to my digital space."
